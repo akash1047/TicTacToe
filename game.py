@@ -1,18 +1,4 @@
-board = [ 'tic tac toe',
-
-    ' 1', ' 2', ' 3',
-    ' 4', ' 5', ' 6',
-    ' 7', ' 8', ' 9',
-]
-
-o = '🟢'
-x = '❌'
-
-
-def draw(position=0, player=' @'):
-    if position in range(1, 10):
-        board[position] = player
-
+def draw(board):
     print(
         '''
   %s  │  %s  │  %s
@@ -27,19 +13,51 @@ def draw(position=0, player=' @'):
     ))
 
 
+def who_is_the_winner(board, players):
+    return None
+
+
+# =======( game data )=======
+
+board = [ 'tic tac toe',
+
+    ' 1', ' 2', ' 3',
+    ' 4', ' 5', ' 6',
+    ' 7', ' 8', ' 9',
+]
+
+p1 = [ "flor", '🟢' ]
+p2 = [ "quil", '❌' ]
+
+# ===========================
+
+
+# game logo
+print(board[0])
+
 # game starts
+draw(board)
 
-# draw the board
-draw()
+turn = 1
 
-player_is_o = True
+while turn <= 9:
+    if turn & 1:
+        player = p1
+    else:
+        player = p2
 
-while True:
-    player = o if player_is_o else x
+    name, sprite = player
+    
+    pos = input(f" {name}'s turn {sprite} > ")
 
-    # switch players
-    player_is_o = not player_is_o
+    pos = int(pos) # exception may occur here
 
-    i = input(f" {player}'s turn > ")
+    if 1 <= pos <= 9 and board[pos] != p1[1] and board[pos] != p2[1]:
+        board[pos] = sprite
 
-    draw(int(i), player)
+        if pos >= 5:
+            winner = who_is_the_winner(board, [p1, p2])
+
+        turn += 1
+
+    draw(board)
