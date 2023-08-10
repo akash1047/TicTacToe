@@ -40,6 +40,6 @@ while True:
     # switch players
     player_is_o = not player_is_o
 
-    i = input(f' {player}'s turn > ')
+    i = input(f" {player}'s turn > ")
 
     draw(int(i), player)
