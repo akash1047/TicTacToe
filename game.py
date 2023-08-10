@@ -1,44 +1,30 @@
-board = [
-    "tic tac toe",
-    " 1",
-    " 2",
-    " 3",
-    " 4",
-    " 5",
-    " 6",
-    " 7",
-    " 8",
-    " 9",
+board = [ 'tic tac toe',
+
+    ' 1', ' 2', ' 3',
+    ' 4', ' 5', ' 6',
+    ' 7', ' 8', ' 9',
 ]
 
-o = "🟢"
-x = "❌"
+o = '🟢'
+x = '❌'
 
 
-def draw(position=0, player=" @"):
+def draw(position=0, player=' @'):
     if position in range(1, 10):
         board[position] = player
 
     print(
-        """
+        '''
   %s  │  %s  │  %s
 ──────┼──────┼──────
   %s  │  %s  │  %s
 ──────┼──────┼──────
   %s  │  %s  │  %s
-"""
-        % (
-            board[1],
-            board[2],
-            board[3],
-            board[4],
-            board[5],
-            board[6],
-            board[7],
-            board[8],
-            board[9],
-        )
-    )
+''' % (
+        board[1], board[2], board[3],
+        board[4], board[5], board[6],
+        board[7], board[8], board[9],
+    ))
 
 
 # game starts
@@ -54,6 +40,6 @@ while True:
     # switch players
     player_is_o = not player_is_o
 
-    i = input(f" {player}'s turn > ")
+    i = input(f' {player}'s turn > ')
 
     draw(int(i), player)
