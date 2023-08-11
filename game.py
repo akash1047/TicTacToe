@@ -13,8 +13,19 @@ def draw(board):
     ))
 
 
+
 def who_is_the_winner(board, players):
-    return None
+    T_wins = [[1,2,3],[4,5,6],[7,8,9],[1,4,7],[2,5,8],[3,6,9],[1,5,9],[3,5,7]]
+
+    for n in T_wins:
+
+        if (board[n[0]] == players[0][1] and board[n[1]] == players[0][1] and board[n[2]] == players[0][1] ):
+             return players[0][0]
+
+        elif (board[n[0]] == players[1][1] and board[n[1]] == players[1][1] and board[n[2]] == players[1][1]):
+            return players[1][0]
+
+    return -1
 
 
 # =======( game data )=======
@@ -56,9 +67,18 @@ while turn <= 9:
         board[pos] = spirit
 
         turn += 1
-        
+
         if turn >= 5:
             winner = who_is_the_winner(board, [p1, p2])
-
+            if(winner != -1):
+                draw(board)
+                break
 
     draw(board)
+
+if(winner != -1):
+    print(winner,"won")
+else :
+    print("its a draw")
+
+
