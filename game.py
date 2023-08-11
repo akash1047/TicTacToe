@@ -46,14 +46,14 @@ while turn <= 9:
     else:
         player = p2
 
-    name, sprite = player
+    name, spirit = player
 
-    pos = input(f" {name}'s turn {sprite} > ")
+    pos = input(f" {name}'s turn {spirit} > ")
 
     pos = int(pos) # exception may occur here
 
     if 1 <= pos <= 9 and board[pos] != p1[1] and board[pos] != p2[1]:
-        board[pos] = sprite
+        board[pos] = spirit
 
         turn += 1
         
