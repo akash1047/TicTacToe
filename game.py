@@ -47,7 +47,7 @@ while turn <= 9:
         player = p2
 
     name, sprite = player
-    
+
     pos = input(f" {name}'s turn {sprite} > ")
 
     pos = int(pos) # exception may occur here
@@ -55,9 +55,10 @@ while turn <= 9:
     if 1 <= pos <= 9 and board[pos] != p1[1] and board[pos] != p2[1]:
         board[pos] = sprite
 
-        if pos >= 5:
+        turn += 1
+        
+        if turn >= 5:
             winner = who_is_the_winner(board, [p1, p2])
 
-        turn += 1
 
     draw(board)
