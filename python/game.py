@@ -1,4 +1,14 @@
+import os
+
+# terminal clear command 
+def CLEAR(): # Author Avideb
+    os.system('clear')
+    
+# clear the game screen before starting the game Author -> Avideb
+CLEAR()
+
 def draw(board):
+    CLEAR()
     print(
         '''
   %s  │  %s  │  %s
@@ -37,8 +47,20 @@ board = [ 'tic tac toe',
     ' 7', ' 8', ' 9',
 ]
 
-p1 = [ "flor", '🟢' ]
-p2 = [ "quil", '❌' ]
+# default configuration for symbol, Author -> Avideb
+sym1 = "🟢"
+sym2 = "❌"
+# player's name input
+# player 1 has rights to chose symbol
+
+pl1 = input("Enter Player1's Name : ")
+opt = input(f"Choose your symbol (1.{sym1} or 2.{sym2}) : ")
+if (int(opt) == 2):
+    sym2, sym1 = sym1, sym2
+pl2 = input ("Enter Player2's Name : ")
+
+p1 = [ pl1, sym1]
+p2 = [ pl2, sym2 ]
 
 # ===========================
 
@@ -52,10 +74,11 @@ draw(board)
 turn = 1
 
 while turn <= 9:
-    if turn & 1:
-        player = p1
-    else:
-        player = p2
+    # if turn & 1:
+    #     player = p1
+    # else:
+    #     player = p2
+    player = p1 if(turn & 1) else p2 # Author -> Avideb
 
     name, spirit = player
 
@@ -81,6 +104,10 @@ if(winner != -1):
 else :
     print("its a draw")
     
+# if game finished # Author -> Avideb
+input("Goodbye... press Enter to exit")
+CLEAR()
+
     
 
 
