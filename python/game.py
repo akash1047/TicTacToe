@@ -1,14 +1,12 @@
-import os
-
 # terminal clear command 
-def CLEAR(): # Author Avideb
-    os.system('clear')
+# def clear(): # Author Avideb
+
     
 # clear the game screen before starting the game Author -> Avideb
-CLEAR()
+# clear()
 
 def draw(board):
-    CLEAR()
+    # clear()
     print(
         '''
   %s  │  %s  │  %s
@@ -74,11 +72,11 @@ draw(board)
 turn = 1
 
 while turn <= 9:
-    # if turn & 1:
-    #     player = p1
-    # else:
-    #     player = p2
-    player = p1 if(turn & 1) else p2 # Author -> Avideb
+    if turn & 1:
+        player = p1
+    else:
+        player = p2
+    # player = p1 if(turn & 1) else p2 # Author -> Avideb
 
     name, spirit = player
 
@@ -103,10 +101,6 @@ if(winner != -1):
     print(winner,"won")
 else :
     print("its a draw")
-    
-# if game finished # Author -> Avideb
-input("Goodbye... press Enter to exit")
-CLEAR()
 
     
 
