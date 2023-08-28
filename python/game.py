@@ -48,8 +48,13 @@ sym2 = "❌"
 
 pl1 = input("Enter Player1's Name : ")
 opt = input(f"Choose your symbol (1.{sym1} or 2.{sym2}) : ")
-if (int(opt) == 2):
-    sym2, sym1 = sym1, sym2
+
+try:
+    if (int(opt) == 2):
+        sym2, sym1 = sym1, sym2
+except:
+    pass
+    
 pl2 = input ("Enter Player2's Name : ")
 
 p1 = [ pl1, sym1 ]
