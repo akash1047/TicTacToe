@@ -1,4 +1,21 @@
 # TicTacToe
 Tic tac toe game
 
-## [Python Cli varient](./python/INSTRUCTION.md)
+## run the game
+
+```bash
+python game.py
+```
+
+or
+
+```bash
+py game.py
+```
+
+or
+
+
+```bash
+python3 game.py
+```
