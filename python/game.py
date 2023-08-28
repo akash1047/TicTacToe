@@ -40,6 +40,9 @@ board = [ 'tic tac toe',
 # default configuration for symbol, Author -> Avideb
 sym1 = "🟢"
 sym2 = "❌"
+
+# =======( program starts )=======
+
 # player's name input
 # player 1 has rights to chose symbol
 
@@ -49,16 +52,12 @@ if (int(opt) == 2):
     sym2, sym1 = sym1, sym2
 pl2 = input ("Enter Player2's Name : ")
 
-p1 = [ pl1, sym1]
+p1 = [ pl1, sym1 ]
 p2 = [ pl2, sym2 ]
-
-# ===========================
-
 
 # game logo
 print(board[0])
 
-# game starts
 draw(board)
 
 turn = 1
@@ -73,7 +72,11 @@ while turn <= 9:
 
     pos = input(f" {name}'s turn {spirit} > ")
 
-    pos = int(pos) # exception may occur here
+    try:
+        pos = int(pos) # exception may occur here
+    except:
+        draw(board)
+        continue
 
     if 1 <= pos <= 9 and board[pos] != p1[1] and board[pos] != p2[1]:
         board[pos] = spirit
@@ -92,7 +95,4 @@ if(winner != -1):
     print(winner,"won")
 else :
     print("its a draw")
-
-    
-
 
