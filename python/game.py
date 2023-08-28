@@ -1,12 +1,4 @@
-# terminal clear command 
-# def clear(): # Author Avideb
-
-    
-# clear the game screen before starting the game Author -> Avideb
-# clear()
-
 def draw(board):
-    # clear()
     print(
         '''
   %s  │  %s  │  %s
@@ -76,7 +68,6 @@ while turn <= 9:
         player = p1
     else:
         player = p2
-    # player = p1 if(turn & 1) else p2 # Author -> Avideb
 
     name, spirit = player
 
