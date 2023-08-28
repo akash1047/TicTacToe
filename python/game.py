@@ -37,8 +37,20 @@ board = [ 'tic tac toe',
     ' 7', ' 8', ' 9',
 ]
 
-p1 = [ "flor", '🟢' ]
-p2 = [ "quil", '❌' ]
+# default configuration for symbol, Author -> Avideb
+sym1 = "🟢"
+sym2 = "❌"
+# player's name input
+# player 1 has rights to chose symbol
+
+pl1 = input("Enter Player1's Name : ")
+opt = input(f"Choose your symbol (1.{sym1} or 2.{sym2}) : ")
+if (int(opt) == 2):
+    sym2, sym1 = sym1, sym2
+pl2 = input ("Enter Player2's Name : ")
+
+p1 = [ pl1, sym1]
+p2 = [ pl2, sym2 ]
 
 # ===========================
 
@@ -80,5 +92,7 @@ if(winner != -1):
     print(winner,"won")
 else :
     print("its a draw")
+
+    
 
 
